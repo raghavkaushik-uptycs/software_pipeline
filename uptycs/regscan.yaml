@@ -1,0 +1,17 @@
+# General Configuration Options
+ci_runner: jenkins
+hostname: regscan.uptycs.dev
+verbose: false
+customer_id: 871a76dd-2bae-49e5-8d75-d14a73ce2a31
+
+# Configure vulnerability scanning.
+vulnerabilities:
+    fatal_cvss_score: 5  # Configure the maximum allowable CVSS score.
+    ignore_no_fix: false # Ignore any detected vulnerabilities for which there are no known fixes.
+    ignore_packages: []  # A list of packages to ignore any detected vulnerabilities in.
+    grace_period: 7d     # Configure a grace period for newly detected vulns
+
+# Configure secrets scanning.
+secrets:
+    paths:         # Configure paths to scan for secrets.
+        - /%%
